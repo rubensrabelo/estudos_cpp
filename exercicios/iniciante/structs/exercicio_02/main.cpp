@@ -1,19 +1,35 @@
 #include<iostream>
+#include<string>
+#include<vector>
 
 using namespace std;
 
-struct DoisNumero{
-    float num1;
-    float num2;
+struct Aluno{
+    int matricula;
+    string nome;
 };
 
 int main(){
-    DoisNumero numeros;
+    int matriculas[] {1, 2, 3};
+    string nomes[] {"Lucas", "Rodolfo", "Sabrina"};
 
-    numeros.num1 = 5;
-    numeros.num2 = 6;
+    vector<Aluno> alunos;
 
-    cout << "Os numeros informados foram: " << numeros.num1 << " e " << numeros.num2 << endl;
+    for(int i=0; i<3; i++){
+        Aluno aluno;
+        aluno.matricula = matriculas[i];
+        aluno.nome = nomes[i];
+
+        alunos.push_back(aluno);
+    }
+
+    for(int i=0; i<3; i++){
+        cout << "--------------------------------------------" << endl;
+        cout << "Matricula: " << alunos[i].matricula << endl;
+        cout << "Nome: " << alunos[i].nome << endl;
+        cout << "--------------------------------------------" << endl;
+        cout << endl;
+    }
 
     return 0;
 }
