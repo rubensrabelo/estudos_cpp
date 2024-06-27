@@ -7,7 +7,7 @@ void copyWord(char *copy, char *word);
 int sizeWord(char *word);
 
 int main(){
-    char word[20] = "Macarrao";
+    char word[20] = "Feijao";
 
     reversedWord(word);
 
@@ -19,7 +19,7 @@ int main(){
 void reversedWord(char *word){
     char otherWord[20];
     copyWord(otherWord, word);
-    int i = sizeWord(word);
+    int i = sizeWord(word) - 1;
     int j = 0;
 
     while(i >= 0) {
@@ -44,6 +44,8 @@ int sizeWord(char *word) {
     while(word[i] != '\0') {
         i++;
     }
+
+    cout << i << endl;
 
     return i;
 }
