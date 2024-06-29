@@ -6,9 +6,9 @@ void sortAnArray(int *number, int qtd);
 void showArray(int* const array, int qtd);
 
 int main(){
-    int numbers[] {3, 1, 6, 5, 4};
+    int numbers[] {3, 1, 6, 5, 4, 10, 9, 8, 7, 2};
 
-    sortAnArray(numbers, 4);
+    sortAnArray(numbers, 10);
 
     return 0;
 }
@@ -16,18 +16,21 @@ int main(){
 void sortAnArray(int *number, int qtd) {
     int* newArray = new int[qtd];
 
-    for(int i = 0; i < qtd; i++) {
-        if(i == 0) {
-            newArray[i] = number[i];
-        } else {
-            // Está dando errado na comparação entre o ultimo numero, pq estou comparando com o 6
-            if(number[i] < newArray[i-1]) {
-                newArray[i] = newArray[i-1];
-                newArray[i-1] = number[i];
-            } else {
-                newArray[i] = number[i];
-            }
+    // Inicialize o newArray com o primeiro elemento do array original
+    newArray[0] = number[0];
+
+    for (int i = 1; i < qtd; i++) {
+        int currentElement = number[i];
+        int j = i - 1;
+
+        // Desloque os elementos maiores para a direita
+        while (j >= 0 && currentElement < newArray[j]) {
+            newArray[j + 1] = newArray[j];
+            j--;
         }
+
+        // Insira o elemento atual na posição correta
+        newArray[j + 1] = currentElement;
     }
 
     showArray(newArray, qtd);
