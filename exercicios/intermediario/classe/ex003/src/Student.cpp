@@ -1,33 +1,33 @@
-#include "include/Student.h"
+#include "../include/School.h"
 
 namespace School {
-            School::Student(int registration, string name, double finalGrade){
-                this->registration = registration;
-                this->name = name;
-                this->finalGrade = finalGrade;
-            }
-            
-            int Student::getRegistration(){
-                return this->registration;
-            };
+    Student::Student(int registration, std::string name, double finalGrade) {
+        this->registration = registration;
+        this->name = name;
+        this->finalGrade = finalGrade;
+    }
 
-            void Student::setName(string name){
-                this->name = name;
-            }
+    int Student::getRegistration() {
+        return this->registration;
+    }
 
-            string Student::getName(){
-                return this->name;
-            }
+    void Student::setName(std::string name) {
+        this->name = name;
+    }
 
-            void Student::setFinalGrade(double finalGrade){
-                this->finalGrade = finalGrade;
-            }
-            
-            double Student::getFinalGrade(){
-                return this->finalGrade;
-            }
+    std::string Student::getName() {
+        return this->name;
+    }
 
-            bool Student::status() {
-                return getFinalGrade() >= 60;
-            }
-};
+    void Student::setFinalGrade(double finalGrade) {
+        this->finalGrade = finalGrade;
+    }
+
+    double Student::getFinalGrade() {
+        return this->finalGrade;
+    }
+
+    bool Student::status() {
+        return getFinalGrade() >= 60;
+    }
+}

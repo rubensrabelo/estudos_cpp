@@ -1,11 +1,12 @@
 #include<iostream>
 
-#include "include/Student.h"
+#include "src/Student.cpp"
 
 using namespace std;
+using namespace School;
 
 int main(){
-    Student::Student student(1, "Marcio Lourendo", 50);
+    Student student(1, "Marcio Lourendo", 50);
 
     cout << "Register: " << student.getRegistration() << endl;
     cout << "Name: " << student.getName() << endl;
