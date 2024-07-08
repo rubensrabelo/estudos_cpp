@@ -1,6 +1,6 @@
 #include<iostream>
 
-#include "src/Student.cpp"
+#include "./include/School.h"
 
 using namespace std;
 using namespace School;
@@ -16,6 +16,8 @@ int main(){
     } else {
         cout << "Status: REPROVADO" << endl;
     }
+
+    system("pause");
 
     return 0;
 }
