@@ -18,6 +18,8 @@ int main(){
 
     cout << "The highest value is " << highest << endl;
 
+    delete[] arrayInt;
+
     return 0;
 }
 
